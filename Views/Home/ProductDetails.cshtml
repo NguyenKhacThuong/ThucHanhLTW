@@ -1,0 +1,38 @@
+﻿@model Buoi6.Models.Product
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="mb-4">Chi tiết sản phẩm</h1>
+
+<div class="card shadow-sm no-hover-effect">
+    <div class="card-body">
+        <h4 class="card-title">@Model.Name</h4>
+        <hr />
+        <div class="row">
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <div class="col-md-4">
+                    <img src="@Model.ImageUrl" alt="@Model.Name" class="img-fluid rounded" style="max-height: 300px; object-fit: cover;" />
+                </div>
+            }
+            <div class="col-md-8">
+                <dl class="row">
+                    <dt class="col-sm-3">Tên sản phẩm</dt>
+                    <dd class="col-sm-9">@Model.Name</dd>
+                    <dt class="col-sm-3">Giá</dt>
+                    <dd class="col-sm-9 highlight-price">@Model.Price.ToString("C")</dd>
+                    <dt class="col-sm-3">Mô tả</dt>
+                    <dd class="col-sm-9">@Model.Description</dd>
+                    <dt class="col-sm-3">Danh mục</dt>
+                    <dd class="col-sm-9"><span class="highlight-category">@(Model.Category?.Name ?? "Không có")</span></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Products" class="btn btn-secondary">Quay lại danh sách</a>
+</div>

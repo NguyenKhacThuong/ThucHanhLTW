@@ -1,0 +1,66 @@
+﻿@model Buoi6.Models.Product
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="mb-4">Xóa sản phẩm</h1>
+
+<div class="alert alert-warning" role="alert">
+    <h3>Bạn có chắc chắn muốn xóa sản phẩm này không?</h3>
+    <p>Hành động này không thể hoàn tác!</p>
+</div>
+
+<div class="card shadow-sm no-hover-effect">
+    <div class="card-body">
+        <h4 class="card-title">Sản phẩm</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </dt>
+            <dd class="col-sm-9">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="@Url.Content(Model.ImageUrl)" alt="@Model.Name" class="img-fluid" style="max-width: 200px; max-height: 200px; object-fit: cover;" />
+                }
+                else
+                {
+                    <span>Không có hình ảnh</span>
+                }
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Category)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Category.Name)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="Id" />
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Xóa</button>
+            <a asp-action="Index" class="btn btn-secondary ms-2"><i class="bi bi-arrow-left"></i> Quay lại danh sách</a>
+        </form>
+    </div>
+</div>
