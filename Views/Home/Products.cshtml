@@ -1,57 +1,115 @@
 ﻿@model IEnumerable<Buoi6.Models.Product>
+@using Buoi6.Models
+@using Microsoft.AspNetCore.Mvc.Rendering
 @{
     ViewData["Title"] = "Danh sách sản phẩm";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Chuẩn bị SelectList cho Dropdown danh mục
+    // Đảm bảo ViewBag.Categories là IEnumerable<Buoi6.Models.Category>
+    var categories = ViewBag.Categories as IEnumerable<Buoi6.Models.Category>;
+    var selectListItems = new List<SelectListItem>();
+
+    // Thêm tùy chọn "Tất cả" đầu tiên
+    selectListItems.Add(new SelectListItem { Value = "0", Text = "Tất cả" });
+
+    // Thêm các danh mục từ ViewBag vào SelectListItems
+    if (categories != null)
+    {
+        foreach (var category in categories)
+        {
+            selectListItems.Add(new SelectListItem { Value = category.Id.ToString(), Text = category.Name });
+        }
+    }
+
+    // Giá trị categoryId hiện tại từ ViewBag để Html.DropDownList chọn đúng mục
+    var currentCategoryId = ViewBag.CategoryId?.ToString() ?? "0";
 }
 
-<h1 class="mb-4">Danh sách sản phẩm</h1>
+<div class="container py-5">
+    <h1 class="mb-4 text-center text-primary">
+        <i class="bi bi-box-seam-fill me-3"></i> Danh sách sản phẩm
+    </h1>
 
-<!-- Dropdown để chọn danh mục -->
-<div class="mb-4">
-    <form asp-action="ProductsByCategory" method="get">
-        <label for="categoryId" class="form-label">Chọn danh mục:</label>
-        <select name="categoryId" id="categoryId" class="form-select w-auto" onchange="this.form.submit()">
-            <option value="">Tất cả</option>
-            @foreach (var category in ViewBag.Categories)
-            {
-                <option value="@category.Id" selected="@(ViewBag.CategoryId == category.Id ? "selected" : null)">@category.Name</option>
-            }
-        </select>
-    </form>
-</div>
+    <div class="row mb-4 align-items-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="form-group d-flex align-items-center">
+                <label for="categoryId" class="form-label me-2 mb-0">Chọn danh mục:</label>
+                @* SỬ DỤNG HTML.DROPDOWNLIST ĐỂ TRÁNH LỖI TAG HELPER VỚI THUỘC TÍNH SELECTED *@
+                <form asp-action="ProductsByCategory" asp-controller="Home" method="get" class="d-flex w-100">
+                    @Html.DropDownList("categoryId", selectListItems, new { @class = "form-select", onchange = "this.form.submit()", @id = "categoryId" })
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-8 text-md-end mt-3 mt-md-0">
+            <p class="text-muted mb-0"><small>Tổng cộng: @Model.Count() sản phẩm</small></p>
+        </div>
+    </div>
 
-<!-- Grid layout cho danh sách sản phẩm -->
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-    @foreach (var item in Model)
+    @if (!Model.Any())
     {
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                @if (!string.IsNullOrEmpty(item.ImageUrl))
-                {
-                    <img src="@item.ImageUrl" class="card-img-top" alt="@item.Name" style="height: 200px; object-fit: cover;" />
-                }
-                else
-                {
-                    <img src="~/images/placeholder.jpg" class="card-img-top" alt="Placeholder" style="height: 200px; object-fit: cover;" />
-                }
-                <div class="card-body">
-                    <h5 class="card-title">@item.Name</h5>
-                    <p class="card-text highlight-price">@item.Price.ToString("C")</p>
-                    @{
-                        var categoryName = "Không có";
-                        foreach (var cat in ViewBag.Categories)
-                        {
-                            if (cat.Id == item.CategoryId)
-                            {
-                                categoryName = cat.Name;
-                                break;
-                            }
-                        }
-                    }
-                    <p class="card-text">Thể loại: <span class="highlight-category">@categoryName</span></p>
-                    <a asp-action="ProductDetails" asp-route-id="@item.Id" class="btn btn-primary">Xem chi tiết</a>
-                </div>
+        <div class="col-12">
+            <div class="alert alert-warning text-center py-5 border-0 shadow-sm rounded-lg" role="alert">
+                <h3 class="alert-heading text-warning mb-3">
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i> Không tìm thấy sản phẩm!
+                </h3>
+                <p class="lead">Rất tiếc, không có sản phẩm nào phù hợp với lựa chọn của bạn.</p>
+                <hr class="my-4">
+                <a asp-controller="Home" asp-action="Products" class="btn btn-secondary btn-lg">
+                    <i class="bi bi-arrow-counterclockwise me-2"></i> Xem tất cả sản phẩm
+                </a>
             </div>
         </div>
     }
+    else
+    {
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            @foreach (var product in Model)
+            {
+                <div class="col">
+                    <div class="card h-100 product-card shadow-sm border-0 rounded-lg">
+                        <a asp-controller="Home" asp-action="ProductDetails" asp-route-id="@product.Id">
+                            @if (!string.IsNullOrEmpty(product.ImageUrl))
+                            {
+                                <img src="@product.ImageUrl" class="card-img-top product-thumbnail" alt="@product.Name">
+                            }
+                            else
+                            {
+                                <img src="~/images/placeholder.jpg" class="card-img-top product-thumbnail" alt="Placeholder">
+                            }
+                        </a>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-primary mb-2">@product.Name</h5>
+                            <p class="card-text text-muted mb-1">
+                                <small>Danh mục: <span class="badge bg-info text-white">@product.Category?.Name</span></small>
+                            </p>
+                            <p class="card-text highlight-price flex-grow-1">@product.Price.ToString("N0") VNĐ</p>
+                            <div class="d-grid gap-2 mt-auto">
+                                <form asp-controller="ShoppingCart" asp-action="AddToCart" method="post">
+                                    <input type="hidden" name="productId" value="@product.Id" />
+                                    <input type="hidden" name="quantity" value="1" />
+                                    <button type="submit" class="btn btn-primary btn-sm w-100 add-to-cart-btn">
+                                        <i class="bi bi-cart-plus me-1"></i> Thêm vào giỏ
+                                    </button>
+                                </form>
+                                <form asp-controller="ShoppingCart" asp-action="BuyNow" method="post">
+                                    <input type="hidden" name="productId" value="@product.Id" />
+                                    <input type="hidden" name="quantity" value="1" />
+                                    <button type="submit" class="btn btn-warning btn-sm w-100 buy-now-btn">
+                                        <i class="bi bi-bag-check me-1"></i> Mua ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
