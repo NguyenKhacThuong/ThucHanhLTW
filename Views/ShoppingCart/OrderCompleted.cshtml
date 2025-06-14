@@ -1,3 +1,4 @@
 ﻿@model int
-<h2>Order Completed</h2>
-<p>Your order with ID @Model has been placed successfully.</p>
+<h2>Đặt hàng thành công!</h2>
+<p>Cảm ơn bạn đã đặt hàng. Mã đơn hàng của bạn là: <strong>#@Model</strong></p>
+<a href="@Url.Action("Index", "Home")" class="btn btn-primary">Về trang chủ</a>

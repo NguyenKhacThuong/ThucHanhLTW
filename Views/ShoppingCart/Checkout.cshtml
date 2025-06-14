@@ -4,37 +4,30 @@
     var cart = ViewBag.Cart as Buoi6.Models.ShoppingCart;
 }
 
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-<partial name="_ValidationScriptsPartial" />
-
 <h2>Thông tin thanh toán</h2>
 
 <form asp-action="Checkout" method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
     <div class="form-group">
         <label asp-for="CustomerName"></label>
-        <input asp-for="CustomerName" class="form-control" />
-        <span asp-validation-for="CustomerName" class="text-danger"></span>
+        <input asp-for="CustomerName" class="form-control" required />
     </div>
 
     <div class="form-group">
         <label asp-for="PhoneNumber"></label>
-        <input asp-for="PhoneNumber" class="form-control" />
-        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        <input asp-for="PhoneNumber" class="form-control" required />
     </div>
 
     <div class="form-group">
         <label asp-for="ShippingAddress"></label>
-        <input asp-for="ShippingAddress" class="form-control" />
-        <span asp-validation-for="ShippingAddress" class="text-danger"></span>
+        <input asp-for="ShippingAddress" class="form-control" required />
     </div>
 
     <div class="form-group">
         <label asp-for="Notes"></label>
         <textarea asp-for="Notes" class="form-control"></textarea>
-        <span asp-validation-for="Notes" class="text-danger"></span>
     </div>
+
+    <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
     <h4>Giỏ hàng</h4>
     @if (cart?.Items != null && cart.Items.Any())
@@ -55,7 +48,7 @@
                         <td>@item.Name</td>
                         <td>@item.Price.ToString("N0") đ</td>
                         <td>@item.Quantity</td>
-                        <td>@(item.Price * item.Quantity).ToString("N0") đ</td>
+                        <td>@(item.Price* item.Quantity) đ</td>
                     </tr>
                 }
             </tbody>

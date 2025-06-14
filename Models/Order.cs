@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Buoi6.Models
@@ -8,25 +8,22 @@ namespace Buoi6.Models
     {
         public int Id { get; set; }
 
-        public string UserId { get; set; }
+        [Required(ErrorMessage = "Họ tên không được để trống")]
+        public string CustomerName { get; set; }
+
+        [Required(ErrorMessage = "Số điện thoại không được để trống")]
+        public string PhoneNumber { get; set; }
+
+        [Required(ErrorMessage = "Địa chỉ không được để trống")]
+        public string ShippingAddress { get; set; }
+
+        public string? Notes { get; set; }
 
         public DateTime OrderDate { get; set; }
 
+        public string? UserId { get; set; }
         public decimal TotalPrice { get; set; }
 
-        [Required(ErrorMessage = "Địa chỉ giao hàng là bắt buộc")]
-        public string ShippingAddress { get; set; }
-
-        public string? Notes { get; set; } // Cho phép null nếu không nhập ghi chú
-
-        public IdentityUser User { get; set; }
-
-        [Required(ErrorMessage = "Tên khách hàng là bắt buộc")]
-        public string CustomerName { get; set; }
-
-        [Required(ErrorMessage = "Số điện thoại là bắt buộc")]
-        public string PhoneNumber { get; set; }
-
-        public List<OrderDetail> OrderDetails { get; set; } = new(); // Tránh null khi truy cập
+        public List<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
     }
 }

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System;
 
+
 namespace Buoi6.Controllers
 {
     [Authorize]
@@ -56,17 +57,16 @@ namespace Buoi6.Controllers
 
             if (!ModelState.IsValid)
             {
-                ViewBag.Cart = cart;
-
-                // In lỗi ModelState
-                foreach (var state in ModelState)
+                Console.WriteLine("ModelState không hợp lệ");
+                foreach (var kv in ModelState)
                 {
-                    foreach (var error in state.Value.Errors)
+                    foreach (var err in kv.Value.Errors)
                     {
-                        Console.WriteLine($"ModelState Error in {state.Key}: {error.ErrorMessage}");
+                        Console.WriteLine($"Lỗi: {kv.Key} - {err.ErrorMessage}");
                     }
                 }
 
+                ViewBag.Cart = cart;
                 return View(order);
             }
 
@@ -83,13 +83,8 @@ namespace Buoi6.Controllers
                     Price = i.Price
                 }).ToList();
 
-                Console.WriteLine("➤ Preparing to save Order to database...");
-                Console.WriteLine($"UserId: {order.UserId}, Total: {order.TotalPrice}, Items: {order.OrderDetails.Count}");
-
                 _context.Orders.Add(order);
                 await _context.SaveChangesAsync();
-
-                Console.WriteLine("✅ SaveChangesAsync success");
 
                 HttpContext.Session.Remove("Cart");
                 TempData["SuccessMessage"] = $"Đơn hàng #{order.Id} của bạn đã được đặt thành công!";
@@ -97,16 +92,16 @@ namespace Buoi6.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("❌ SaveChangesAsync failed: " + ex.Message);
                 TempData["ErrorMessage"] = "Lỗi khi lưu đơn hàng: " + ex.Message;
                 ViewBag.Cart = cart;
                 return View(order);
             }
         }
 
+
         public IActionResult OrderCompleted(int id)
         {
-            return View(id);
+            return View(id); // truyền Id sang view
         }
 
         [HttpPost]
