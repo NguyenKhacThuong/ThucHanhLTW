@@ -37,7 +37,6 @@
                             </a>
                         </li>
 
-                        @* ❌ Không hiển thị giỏ hàng nếu là Admin *@
                         @if (!User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
@@ -47,7 +46,6 @@
                             </li>
                         }
 
-                        @* ✅ Hiển thị mục quản lý nếu là Admin *@
                         @if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item dropdown">
@@ -90,7 +88,9 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
