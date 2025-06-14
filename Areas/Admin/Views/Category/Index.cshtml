@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Buoi6.Models.Category>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách danh mục";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -27,8 +27,8 @@
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td class="text-end">
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i> Sửa</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm ms-2" onclick="return confirmDelete('@item.Name', @item.Id);"><i class="bi bi-trash"></i> Xóa</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm mb-2"><i class="bi bi-pencil-square"></i> Sửa</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm mb-2" onclick="return confirmDelete('@item.Name', @item.Id);"><i class="bi bi-trash"></i> Xóa</a>
                 </td>
             </tr>
         }
