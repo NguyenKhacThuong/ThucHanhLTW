@@ -1,5 +1,5 @@
 ﻿using Buoi6.Models;
-using Buoi6.Repository;
+using Buoi6.Repository; // Đảm bảo đã include namespace này
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -8,18 +8,40 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System;
 
+// Đảm bảo bạn có các Extension Methods cho Session nếu chưa có
+// namespace Buoi6.Extensions
+// {
+//     public static class SessionExtensions
+//     {
+//         public static void SetObjectAsJson<T>(this ISession session, string key, T value)
+//         {
+//             session.SetString(key, System.Text.Json.JsonSerializer.Serialize(value));
+//         }
+//
+//         public static T? GetObjectFromJson<T>(this ISession session, string key)
+//         {
+//             var value = session.GetString(key);
+//             return value == null ? default(T) : System.Text.Json.JsonSerializer.Deserialize<T>(value);
+//         }
+//     }
+// }
 
 namespace Buoi6.Controllers
 {
-    [Authorize]
+    [Authorize] // Yêu cầu người dùng đăng nhập để truy cập giỏ hàng và thanh toán
     public class ShoppingCartController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        // Loại bỏ ApplicationDbContext và thay thế bằng repositories
+        private readonly IProductRepository _productRepository;
+        private readonly IOrderRepository _orderRepository;
         private readonly UserManager<IdentityUser> _userManager;
 
-        public ShoppingCartController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public ShoppingCartController(IProductRepository productRepository, // Thay thế ApplicationDbContext
+                                      IOrderRepository orderRepository, // Thêm OrderRepository
+                                      UserManager<IdentityUser> userManager)
         {
-            _context = context;
+            _productRepository = productRepository;
+            _orderRepository = orderRepository;
             _userManager = userManager;
         }
 
@@ -38,7 +60,9 @@ namespace Buoi6.Controllers
                 return RedirectToAction("Index");
             }
 
-            var user = await _userManager.GetUserAsync(User);
+            // Lấy thông tin người dùng nếu có, để điền trước vào form Order
+            // (Không cần dùng trực tiếp user ở đây nếu model Order không dùng Email/UserName)
+            // var user = await _userManager.GetUserAsync(User);
             var order = new Order();
 
             ViewBag.Cart = cart;
@@ -46,6 +70,7 @@ namespace Buoi6.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken] // Luôn nên có cho các POST request có form
         public async Task<IActionResult> Checkout(Order order)
         {
             var cart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("Cart");
@@ -57,14 +82,15 @@ namespace Buoi6.Controllers
 
             if (!ModelState.IsValid)
             {
-                Console.WriteLine("ModelState không hợp lệ");
-                foreach (var kv in ModelState)
-                {
-                    foreach (var err in kv.Value.Errors)
-                    {
-                        Console.WriteLine($"Lỗi: {kv.Key} - {err.ErrorMessage}");
-                    }
-                }
+                // In lỗi ModelState ra console để debug
+                // Console.WriteLine("ModelState không hợp lệ");
+                // foreach (var kv in ModelState)
+                // {
+                //     foreach (var err in kv.Value.Errors)
+                //     {
+                //         Console.WriteLine($"Lỗi: {kv.Key} - {err.ErrorMessage}");
+                //     }
+                // }
 
                 ViewBag.Cart = cart;
                 return View(order);
@@ -76,23 +102,36 @@ namespace Buoi6.Controllers
                 order.UserId = user?.Id;
                 order.OrderDate = DateTime.UtcNow;
                 order.TotalPrice = cart.Items.Sum(i => i.Price * i.Quantity);
-                order.OrderDetails = cart.Items.Select(i => new OrderDetail
+                order.Status = OrderStatus.Pending; // <-- Đã thêm: Đặt trạng thái ban đầu của đơn hàng
+
+                // Thêm chi tiết đơn hàng
+                foreach (var cartItem in cart.Items)
                 {
-                    ProductId = i.ProductId,
-                    Quantity = i.Quantity,
-                    Price = i.Price
-                }).ToList();
+                    // Lấy lại sản phẩm từ DB để đảm bảo thông tin giá chính xác tại thời điểm đặt hàng
+                    var product = await _productRepository.GetByIdAsync(cartItem.ProductId);
+                    if (product != null)
+                    {
+                        order.OrderDetails.Add(new OrderDetail
+                        {
+                            ProductId = product.Id, // Sử dụng ID sản phẩm từ DB
+                            Quantity = cartItem.Quantity,
+                            Price = product.Price // Sử dụng giá sản phẩm từ DB (đảm bảo chính xác)
+                        });
+                    }
+                }
 
-                _context.Orders.Add(order);
-                await _context.SaveChangesAsync();
+                await _orderRepository.AddAsync(order); // <-- Đã sửa: Sử dụng repository để thêm đơn hàng
 
-                HttpContext.Session.Remove("Cart");
+                HttpContext.Session.Remove("Cart"); // Xóa giỏ hàng sau khi đặt thành công
                 TempData["SuccessMessage"] = $"Đơn hàng #{order.Id} của bạn đã được đặt thành công!";
                 return RedirectToAction("OrderCompleted", new { id = order.Id });
             }
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = "Lỗi khi lưu đơn hàng: " + ex.Message;
+                // Ghi log lỗi chi tiết hơn trong môi trường phát triển/kiểm thử
+                // Console.WriteLine($"Lỗi: {ex.Message}");
+                // Console.WriteLine($"StackTrace: {ex.StackTrace}");
                 ViewBag.Cart = cart;
                 return View(order);
             }
@@ -105,9 +144,10 @@ namespace Buoi6.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken] // Đảm bảo có nếu nhận từ form POST
         public async Task<IActionResult> AddToCart(int productId, int quantity)
         {
-            var product = await GetProductFromDatabase(productId);
+            var product = await _productRepository.GetByIdAsync(productId); // <-- Đã sửa: Dùng IProductRepository
             if (product == null)
             {
                 TempData["ErrorMessage"] = "Sản phẩm không tồn tại.";
@@ -120,7 +160,7 @@ namespace Buoi6.Controllers
                 Name = product.Name,
                 Price = product.Price,
                 Quantity = quantity,
-                ImageUrl = product.ImageUrl
+                ImageUrl = product.ImageUrl // Đảm bảo Product có thuộc tính ImageUrl hoặc lấy từ Images collection
             };
 
             var cart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("Cart") ?? new ShoppingCart();
@@ -132,6 +172,7 @@ namespace Buoi6.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken] // Đảm bảo có nếu nhận từ form POST
         public IActionResult RemoveFromCart(int productId)
         {
             var cart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("Cart") ?? new ShoppingCart();
@@ -143,9 +184,10 @@ namespace Buoi6.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken] // Đảm bảo có nếu nhận từ form POST
         public async Task<IActionResult> BuyNow(int productId, int quantity)
         {
-            var product = await GetProductFromDatabase(productId);
+            var product = await _productRepository.GetByIdAsync(productId); // <-- Đã sửa: Dùng IProductRepository
             if (product == null)
             {
                 TempData["ErrorMessage"] = "Sản phẩm không tồn tại.";
@@ -169,11 +211,12 @@ namespace Buoi6.Controllers
             return RedirectToAction("Checkout", "ShoppingCart");
         }
 
-        private async Task<Product?> GetProductFromDatabase(int productId)
-        {
-            return await _context.Products
-                .Include(p => p.Images)
-                .FirstOrDefaultAsync(p => p.Id == productId);
-        }
+        // Phương thức này không còn cần thiết nếu bạn đã inject IProductRepository
+        // private async Task<Product?> GetProductFromDatabase(int productId)
+        // {
+        //     return await _context.Products
+        //         .Include(p => p.Images)
+        //         .FirstOrDefaultAsync(p => p.Id == productId);
+        // }
     }
 }

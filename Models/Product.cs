@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-
 namespace Buoi6.Models
 {
     public class Product
@@ -18,7 +17,7 @@ namespace Buoi6.Models
         [DisplayName("Tên sản phẩm")]
         public string Name { get; set; }
 
-        [Range(1_000, 1000000_000, ErrorMessage = "Giá sản phẩm phải nằm trong khoảng từ 1.000 đến 1000000_000")]
+        [Range(1_000, 100_000_000, ErrorMessage = "Giá sản phẩm phải nằm trong khoảng từ 1.000 đến 100.000.000")]
         [DisplayName("Giá bán")]
         public decimal Price { get; set; }
 
@@ -29,7 +28,7 @@ namespace Buoi6.Models
         public string? ImageUrl { get; set; }
 
         [ValidateNever]
-        public List<ProductImage>? Images { get; set; }
+        public List<ProductImage>? ProductImages { get; set; } = new(); // Khởi tạo danh sách rỗng
 
         [ForeignKey("Category")]
         [DisplayName("Mã danh mục")]

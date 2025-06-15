@@ -16,6 +16,6 @@ namespace Buoi6.Models
         public string Name { get; set; }
 
         [ValidateNever]
-        public List<Product> Products { get; set; }
+        public List<Product>? Products { get; set; } = new(); // Khởi tạo danh sách rỗng
     }
 }

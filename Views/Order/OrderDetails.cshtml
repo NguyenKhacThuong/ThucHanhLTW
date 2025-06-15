@@ -1,0 +1,107 @@
+﻿@model Buoi6.Models.Order
+
+@{
+    ViewData["Title"] = "Chi tiết Đơn hàng";
+}
+
+<h1 class="mb-4">Chi tiết Đơn hàng #@Model.Id</h1>
+
+@if (Model == null)
+{
+    <div class="alert alert-warning" role="alert">
+        Không tìm thấy đơn hàng.
+    </div>
+}
+else
+{
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+            Thông tin Đơn hàng
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Mã Đơn hàng:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Id)</dd>
+
+                <dt class="col-sm-3">Ngày đặt:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.OrderDate)</dd>
+
+                <dt class="col-sm-3">Tổng tiền:</dt>
+                <dd class="col-sm-9">@Model.TotalPrice.ToString("N0") VNĐ</dd>
+
+                <dt class="col-sm-3">Trạng thái:</dt>
+                <dd class="col-sm-9">
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <form asp-action="UpdateStatus" asp-controller="Order" method="post">
+                            <input type="hidden" name="id" value="@Model.Id" />
+                            <div class="d-flex align-items-center">
+                                @Html.DropDownList("newStatus", ViewBag.StatusList as SelectList, new { @class = "form-select form-select-sm me-2", style = "width: auto;" })
+                                <button type="submit" class="btn btn-sm btn-primary">Cập nhật</button>
+                            </div>
+                        </form>
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(model => model.Status)
+                    }
+                </dd>
+
+                <dt class="col-sm-3">Tên Khách hàng:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.CustomerName)</dd>
+
+                <dt class="col-sm-3">Số điện thoại:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.PhoneNumber)</dd>
+
+                <dt class="col-sm-3">Địa chỉ giao hàng:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.ShippingAddress)</dd>
+
+                <dt class="col-sm-3">Ghi chú:</dt>
+                <dd class="col-sm-9">@(string.IsNullOrEmpty(Model.Notes) ? "Không có" : Model.Notes)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <h2 class="mb-3">Chi tiết Sản phẩm</h2>
+    @if (Model.OrderDetails == null || !Model.OrderDetails.Any())
+    {
+        <div class="alert alert-warning" role="alert">
+            Không có sản phẩm nào trong đơn hàng này.
+        </div>
+    }
+    else
+    {
+        <table class="table table-bordered table-hover">
+            <thead class="table-info">
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var detail in Model.OrderDetails)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => detail.Product.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => detail.Quantity)</td>
+                        <td>@detail.Price.ToString("N0") VNĐ</td>
+                        <td>@((detail.Quantity * detail.Price).ToString("N0")) VNĐ</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <div class="mt-4">
+        @if (User.IsInRole("Admin"))
+        {
+            <a asp-action="ManageOrders" class="btn btn-secondary">Quay lại trang Quản lý Đơn hàng</a>
+        }
+        else
+        {
+            <a asp-action="UserOrders" class="btn btn-secondary">Quay lại Đơn hàng của tôi</a>
+        }
+    </div>
+}

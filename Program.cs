@@ -1,3 +1,4 @@
+﻿// Program.cs (Sửa đổi)
 using Buoi6.Models;
 using Buoi6.Repository;
 using Microsoft.AspNetCore.Identity;
@@ -15,6 +16,8 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
 
 builder.Services.AddScoped<IProductRepository, EFProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, EFCategoryRepository>();
+builder.Services.AddScoped<IOrderRepository, EFOrderRepository>(); // <-- Thêm dòng này
+
 builder.Services.AddRazorPages();
 
 builder.Services.AddDistributedMemoryCache();
@@ -25,10 +28,8 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Configure application cookie for login redirect
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Identity/Account/Login";
@@ -39,7 +40,6 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 var app = builder.Build();
 
-// Seed roles v� admin user
 using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -49,7 +49,6 @@ using (var scope = app.Services.CreateScope())
     await DbSeeder.SeedAdminUserAsync(userManager);
 }
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -65,8 +64,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-        name: "admin",
-        pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+    name: "admin",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.UseEndpoints(endpoints =>
 {

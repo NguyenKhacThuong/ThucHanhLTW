@@ -3,6 +3,10 @@ using Buoi6.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Buoi6.Areas.Admin.Controllers
 {
@@ -20,7 +24,6 @@ namespace Buoi6.Areas.Admin.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        // Hiển thị danh sách sản phẩm
         public async Task<IActionResult> Index()
         {
             var products = await _productRepository.GetAllAsync();
@@ -35,33 +38,41 @@ namespace Buoi6.Areas.Admin.Controllers
         {
             var categories = await _categoryRepository.GetAllAsync();
             ViewBag.Categories = new SelectList(categories, "Id", "Name");
-
             return View();
         }
 
-        // Xu ly them san pham moi
         [HttpPost]
-        public async Task<IActionResult> Create(Product product, IFormFile imageUrl)
+        public async Task<IActionResult> Create(Product product, IFormFile imageUrl, List<IFormFile> additionalImages)
         {
             if (ModelState.IsValid)
             {
                 if (imageUrl != null)
                 {
-                    // Luu hinh anh dai dien
                     product.ImageUrl = await SaveImage(imageUrl);
+                }
+
+                product.ProductImages = new List<ProductImage>();
+                if (additionalImages != null)
+                {
+                    foreach (var file in additionalImages)
+                    {
+                        if (file != null && file.Length > 0)
+                        {
+                            string imagePath = await SaveImage(file);
+                            product.ProductImages.Add(new ProductImage { ImageUrl = imagePath });
+                        }
+                    }
                 }
 
                 await _productRepository.AddAsync(product);
                 return RedirectToAction(nameof(Index));
             }
 
-            // Neu ModelState khong hop le, hien thi form voi du lieu da nhap
             var categories = await _categoryRepository.GetAllAsync();
             ViewBag.Categories = new SelectList(categories, "Id", "Name");
             return View(product);
         }
 
-        // Hiển thị form chỉnh sửa sản phẩm
         public async Task<IActionResult> Edit(int id)
         {
             var product = await _productRepository.GetByIdAsync(id);
@@ -74,25 +85,59 @@ namespace Buoi6.Areas.Admin.Controllers
             return View(product);
         }
 
-        // Xử lý cập nhật sản phẩm
         [HttpPost]
-        public async Task<IActionResult> Edit(Product product, IFormFile imageUrl)
+        public async Task<IActionResult> Edit(int id, Product product, IFormFile imageUrl, List<IFormFile> additionalImages)
         {
+            if (id != product.Id) return NotFound();
+
             if (ModelState.IsValid)
             {
+                var existingProduct = await _productRepository.GetByIdAsync(id);
+                if (existingProduct == null) return NotFound();
+
+                // Cập nhật thông tin cơ bản
+                existingProduct.Name = product.Name;
+                existingProduct.Price = product.Price;
+                existingProduct.Description = product.Description;
+                existingProduct.CategoryId = product.CategoryId;
+
+                // Xử lý ảnh chính
                 if (imageUrl != null)
                 {
-                    product.ImageUrl = await SaveImage(imageUrl);
+                    existingProduct.ImageUrl = await SaveImage(imageUrl);
                 }
-                await _productRepository.UpdateAsync(product);
+
+                // Xử lý ảnh bổ sung
+                if (existingProduct.ProductImages == null)
+                {
+                    existingProduct.ProductImages = new List<ProductImage>();
+                }
+
+                // Giữ lại ảnh bổ sung hiện có
+                var existingImageIds = existingProduct.ProductImages.Select(x => x.Id).ToList();
+
+                // Thêm ảnh bổ sung mới
+                if (additionalImages != null)
+                {
+                    foreach (var file in additionalImages)
+                    {
+                        if (file != null && file.Length > 0)
+                        {
+                            string imagePath = await SaveImage(file);
+                            existingProduct.ProductImages.Add(new ProductImage { ImageUrl = imagePath, ProductId = id });
+                        }
+                    }
+                }
+
+                await _productRepository.UpdateAsync(existingProduct);
                 return RedirectToAction(nameof(Index));
             }
+
             var categories = await _categoryRepository.GetAllAsync();
             ViewBag.Categories = new SelectList(categories, "Id", "Name", product.CategoryId);
             return View(product);
         }
 
-        // Hiển thị xác nhận xóa sản phẩm
         public async Task<IActionResult> Delete(int id)
         {
             var product = await _productRepository.GetByIdAsync(id);
@@ -103,7 +148,6 @@ namespace Buoi6.Areas.Admin.Controllers
             return View(product);
         }
 
-        // Xử lý xóa sản phẩm
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
@@ -111,26 +155,15 @@ namespace Buoi6.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // Hiển thị thông tin chi tiết sản phẩm
-        //public async Task<IActionResult> Details(int id)
-        //{
-        //    var product = await _productRepository.GetByIdAsync(id);
-        //    if (product == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(product);
-        //}
-
-        // Luu hinh anh
         private async Task<string> SaveImage(IFormFile image)
         {
-            var savePath = Path.Combine("wwwroot/images", image.FileName); // Thay đổi đường dẫn theo cấu hình của bạn
+            var uniqueFileName = Guid.NewGuid().ToString() + "_" + image.FileName;
+            var savePath = Path.Combine("wwwroot/images", uniqueFileName);
             using (var fileStream = new FileStream(savePath, FileMode.Create))
             {
                 await image.CopyToAsync(fileStream);
             }
-            return "/images/" + image.FileName; // Trả về đường dẫn tương đối
+            return "/images/" + uniqueFileName;
         }
     }
 }

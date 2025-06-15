@@ -10,7 +10,8 @@ namespace Buoi6.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public string Url { get; set; }
+        [Required(ErrorMessage = "URL ảnh là bắt buộc")]
+        public string ImageUrl { get; set; }
 
         [ForeignKey("Product")]
         public int ProductId { get; set; }

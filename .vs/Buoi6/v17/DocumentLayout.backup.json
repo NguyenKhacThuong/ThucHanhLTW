@@ -3,28 +3,116 @@
   "WorkspaceRootPath": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\areas\\admin\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:areas\\admin\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Migrations\\20250615073836_UpdateProductImagesRelationship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250615073836_UpdateProductImagesRelationship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\repository\\efproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:repository\\efproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\areas\\admin\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:areas\\admin\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\views\\home\\productdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:views\\home\\productdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\models\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:models\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\views\\order\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:views\\order\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\views\\order\\manageorders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:views\\order\\manageorders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\views\\shoppingcart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:views\\shoppingcart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\views\\shoppingcart\\ordercompleted.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:views\\shoppingcart\\ordercompleted.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\views\\order\\userorders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:views\\order\\userorders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\repository\\eforderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:repository\\eforderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\views\\shoppingcart\\ordercompleted.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:views\\shoppingcart\\ordercompleted.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\repository\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:repository\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\views\\shoppingcart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:views\\shoppingcart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -41,26 +129,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|c:\\users\\khac thuong\\source\\repos\\thuchanhltw\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8142DECA-5E23-4A6D-8F33-1E2F7C580D13}|Buoi6.csproj|solutionrelative:models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,24 +138,245 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 17,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20250615073836_UpdateProductImagesRelationship.cs",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Migrations\\20250615073836_UpdateProductImagesRelationship.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250615073836_UpdateProductImagesRelationship.cs",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Migrations\\20250615073836_UpdateProductImagesRelationship.cs",
+              "RelativeToolTip": "Migrations\\20250615073836_UpdateProductImagesRelationship.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T07:38:37.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAADsAAAAAAAAAAAAowEUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-15T07:30:58.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Areas\\Admin\\Views\\Product\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Product\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Areas\\Admin\\Views\\Product\\Edit.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Product\\Edit.cshtml",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAowEgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-15T07:30:49.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAYwDcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-15T07:30:37.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "EFProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Repository\\EFProductRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\EFProductRepository.cs",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Repository\\EFProductRepository.cs",
+              "RelativeToolTip": "Repository\\EFProductRepository.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAmwF4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T07:22:31.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\Home\\ProductDetails.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\ProductDetails.cshtml",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\Home\\ProductDetails.cshtml",
+              "RelativeToolTip": "Views\\Home\\ProductDetails.cshtml",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAAAHkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-15T07:19:53.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Models\\Category.cs",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Models\\Category.cs",
+              "RelativeToolTip": "Models\\Category.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAwwBQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T07:06:20.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProductImage.cs",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Models\\ProductImage.cs",
+              "RelativeDocumentMoniker": "Models\\ProductImage.cs",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Models\\ProductImage.cs",
+              "RelativeToolTip": "Models\\ProductImage.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAUwBQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T07:06:00.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAkwCcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T07:04:32.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\Product\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\Details.cshtml",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\Product\\Details.cshtml",
+              "RelativeToolTip": "Views\\Product\\Details.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-15T07:02:44.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ManageOrders.cshtml",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\Order\\ManageOrders.cshtml",
+              "RelativeDocumentMoniker": "Views\\Order\\ManageOrders.cshtml",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\Order\\ManageOrders.cshtml",
+              "RelativeToolTip": "Views\\Order\\ManageOrders.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowC8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-15T06:41:36.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "OrderDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\Order\\OrderDetails.cshtml",
+              "RelativeDocumentMoniker": "Views\\Order\\OrderDetails.cshtml",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\Order\\OrderDetails.cshtml",
+              "RelativeToolTip": "Views\\Order\\OrderDetails.cshtml",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAowGoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-15T06:22:34.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "UserOrders.cshtml",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\Order\\UserOrders.cshtml",
+              "RelativeDocumentMoniker": "Views\\Order\\UserOrders.cshtml",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\Order\\UserOrders.cshtml",
+              "RelativeToolTip": "Views\\Order\\UserOrders.cshtml",
+              "ViewState": "AgIAABkAAAAAAAAAAAAowCcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-15T06:21:52.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Controllers\\OrderController.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAkwGgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T06:20:05.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "EFOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Repository\\EFOrderRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\EFOrderRepository.cs",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Repository\\EFOrderRepository.cs",
+              "RelativeToolTip": "Repository\\EFOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T06:14:25.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Repository\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\IOrderRepository.cs",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Repository\\IOrderRepository.cs",
+              "RelativeToolTip": "Repository\\IOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T06:13:49.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAUwGoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T06:06:46.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAmwGAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAAHEAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-13T07:22:39.865Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 28,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
@@ -99,7 +388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 20,
               "Title": "OrderCompleted.cshtml",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\ShoppingCart\\OrderCompleted.cshtml",
               "RelativeDocumentMoniker": "Views\\ShoppingCart\\OrderCompleted.cshtml",
@@ -112,20 +401,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 26,
               "Title": "Checkout.cshtml",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\ShoppingCart\\Checkout.cshtml",
               "RelativeDocumentMoniker": "Views\\ShoppingCart\\Checkout.cshtml",
               "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\ShoppingCart\\Checkout.cshtml",
               "RelativeToolTip": "Views\\ShoppingCart\\Checkout.cshtml",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAmwB4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-13T06:57:36.952Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 22,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Models\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Models\\ApplicationDbContext.cs",
@@ -138,32 +427,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 25,
               "Title": "OrderDetail.cs",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Models\\OrderDetail.cs",
               "RelativeDocumentMoniker": "Models\\OrderDetail.cs",
               "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Models\\OrderDetail.cs",
               "RelativeToolTip": "Models\\OrderDetail.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA3wA0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA1wA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T06:49:17.587Z"
+              "WhenOpened": "2025-06-13T06:49:17.587Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 16,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Models\\Order.cs",
               "RelativeDocumentMoniker": "Models\\Order.cs",
               "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Models\\Order.cs",
               "RelativeToolTip": "Models\\Order.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAqwB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAwCwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-13T06:48:51.451Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Areas\\Admin\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\CategoryController.cs",
@@ -171,11 +461,12 @@
               "RelativeToolTip": "Areas\\Admin\\Controllers\\CategoryController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T06:14:23.217Z"
+              "WhenOpened": "2025-06-13T06:14:23.217Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 29,
               "Title": "Products.cshtml",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\Home\\Products.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Products.cshtml",
@@ -187,7 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 30,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Views\\ShoppingCart\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\ShoppingCart\\Index.cshtml",
@@ -199,32 +490,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 19,
               "Title": "ShoppingCartController.cs",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Controllers\\ShoppingCartController.cs",
               "RelativeDocumentMoniker": "Controllers\\ShoppingCartController.cs",
               "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Controllers\\ShoppingCartController.cs",
               "RelativeToolTip": "Controllers\\ShoppingCartController.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAiwGMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAANAAAAAAAAAAAAAkwN0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-13T05:56:22.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 27,
               "Title": "ShoppingCart.cs",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Models\\ShoppingCart.cs",
               "RelativeDocumentMoniker": "Models\\ShoppingCart.cs",
               "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Models\\ShoppingCart.cs",
               "RelativeToolTip": "Models\\ShoppingCart.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAcwBcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAUwBcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T05:55:33.338Z"
+              "WhenOpened": "2025-06-13T05:55:33.338Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 31,
               "Title": "CartItem.cs",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Models\\CartItem.cs",
               "RelativeDocumentMoniker": "Models\\CartItem.cs",
@@ -236,27 +528,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAAAEIAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAUwE4AAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T05:39:44.042Z"
+              "WhenOpened": "2025-06-13T05:39:44.042Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 2,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Areas\\Admin\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\ProductController.cs",
               "ToolTip": "C:\\Users\\KHAC THUONG\\source\\repos\\ThucHanhLTW\\Areas\\Admin\\Controllers\\ProductController.cs",
               "RelativeToolTip": "Areas\\Admin\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAmwKgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T05:36:17.631Z"
+              "WhenOpened": "2025-06-13T05:36:17.631Z",
+              "EditorCaption": ""
             }
           ]
         }

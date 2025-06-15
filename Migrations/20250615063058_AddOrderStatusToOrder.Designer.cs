@@ -4,6 +4,7 @@ using Buoi6.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Buoi6.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250615063058_AddOrderStatusToOrder")]
+    partial class AddOrderStatusToOrder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -155,12 +158,12 @@ namespace Buoi6.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -404,7 +407,7 @@ namespace Buoi6.Migrations
             modelBuilder.Entity("Buoi6.Models.ProductImage", b =>
                 {
                     b.HasOne("Buoi6.Models.Product", "Product")
-                        .WithMany("ProductImages")
+                        .WithMany("Images")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -480,7 +483,7 @@ namespace Buoi6.Migrations
 
             modelBuilder.Entity("Buoi6.Models.Product", b =>
                 {
-                    b.Navigation("ProductImages");
+                    b.Navigation("Images");
                 });
 #pragma warning restore 612, 618
         }

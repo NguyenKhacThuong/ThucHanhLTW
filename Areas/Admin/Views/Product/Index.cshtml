@@ -17,6 +17,7 @@
             <th>Giá bán</th>
             <th>Mô tả</th>
             <th>Hình ảnh</th>
+            <th>Ảnh bổ sung</th>
             <th>Danh mục</th>
             <th></th>
         </tr>
@@ -32,6 +33,23 @@
                     @if (!string.IsNullOrEmpty(item.ImageUrl))
                     {
                         <img src="@item.ImageUrl" alt="@item.Name" class="img-fluid" style="max-width: 100px; max-height: 100px; object-fit: cover;" />
+                    }
+                    else
+                    {
+                        <span>Không có</span>
+                    }
+                </td>
+                <td>
+                    @if (item.ProductImages != null && item.ProductImages.Any())
+                    {
+                        @foreach (var image in item.ProductImages.Take(2)) // Hiển thị tối đa 2 ảnh bổ sung
+                        {
+                            <img src="@image.ImageUrl" alt="Additional Image" class="img-fluid" style="max-width: 100px; max-height: 100px; object-fit: cover; margin-right: 5px;" />
+                        }
+                    }
+                    else
+                    {
+                        <span>Không có</span>
                     }
                 </td>
                 <td>@item.Category?.Name</td>

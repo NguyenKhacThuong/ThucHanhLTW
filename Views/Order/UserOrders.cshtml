@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Buoi6.Models.Order>
+
+@{
+    ViewData["Title"] = "Đơn hàng của tôi";
+}
+
+<h1>Đơn hàng của tôi</h1>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Mã đơn hàng</th>
+                <th>Ngày đặt</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.OrderDate.ToShortDateString()</td>
+                    <td>@item.TotalPrice.ToString("N0") đ</td>
+                    <td>@item.Status.ToString()</td>
+                    <td>
+                        <a asp-action="OrderDetails" asp-route-id="@item.Id">Chi tiết</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Bạn chưa có đơn hàng nào.</p>
+}

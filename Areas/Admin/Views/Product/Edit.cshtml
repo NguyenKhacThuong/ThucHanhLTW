@@ -30,9 +30,28 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group mb-3">
-                <label asp-for="ImageUrl" class="control-label"></label>
-                <input type="file" asp-for="ImageUrl" class="form-control" />
+                <label asp-for="ImageUrl" class="control-label">Hình ảnh chính</label>
+                <input type="file" name="imageUrl" class="form-control" />
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="@Url.Content(Model.ImageUrl)" alt="@Model.Name" class="img-fluid mt-2" style="max-width: 200px; max-height: 200px; object-fit: cover;" />
+                }
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label>Ảnh bổ sung</label>
+                <input type="file" name="additionalImages" class="form-control" multiple />
+                @if (Model.ProductImages != null && Model.ProductImages.Any())
+                {
+                    <div class="row mt-2">
+                        @foreach (var image in Model.ProductImages)
+                        {
+                            <div class="col-md-4 mb-2">
+                                <img src="@Url.Content(image.ImageUrl)" alt="Additional Image" class="img-fluid" style="max-width: 150px; max-height: 150px; object-fit: cover;" />
+                            </div>
+                        }
+                    </div>
+                }
             </div>
             <div class="form-group mb-3">
                 <label asp-for="CategoryId" class="control-label"></label>
@@ -46,3 +65,9 @@
         </form>
     </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -12,7 +12,6 @@
 </head>
 <body class="d-flex flex-column min-vh-100 bg-light">
 
-    <!-- Navbar -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
             <div class="container">
@@ -46,6 +45,15 @@
                             </li>
                         }
 
+                        @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Order" asp-action="UserOrders">
+                                    <i class="bi bi-receipt"></i> Đơn hàng của tôi
+                                </a>
+                            </li>
+                        }
+
                         @if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item dropdown">
@@ -63,6 +71,11 @@
                                             <i class="bi bi-folder2-open"></i> Quản lý Danh mục
                                         </a>
                                     </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Order" asp-action="ManageOrders">
+                                            <i class="bi bi-receipt-cutoff"></i> Quản lý Đơn hàng
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         }
@@ -74,26 +87,28 @@
         </nav>
     </header>
 
-    <!-- Main content -->
     <main role="main" class="container my-4 flex-grow-1">
         @RenderBody()
     </main>
 
-    <!-- Footer -->
     <footer class="bg-dark text-white py-4 mt-auto">
         <div class="container text-center">
-            <p class="mb-1">&copy; @DateTime.Now.Year - <strong>VVipShop</strong></p>
+            <p class="mb-1">© @DateTime.Now.Year - <strong>VVipShop</strong></p>
             <small>Thiết kế bởi <span class="text-info">Khắc Thượng</span></small>
         </div>
     </footer>
 
-    <!-- Bootstrap -->
+    <!-- Thêm jQuery trước -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Thêm jQuery Validate -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <!-- Thêm jQuery Validate Unobtrusive -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+    <!-- Thêm Bootstrap JS -->
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Your site -->
+    <!-- Thêm custom script -->
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
-
 </body>
 </html>
